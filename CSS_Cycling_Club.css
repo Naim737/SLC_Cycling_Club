@@ -1,0 +1,781 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    justify-content: center;
+    width: 100%;
+    background-color: white;
+    font-family: 'Roboto', sans-serif;  
+    }
+
+.entete {
+    display: flex; /* Active Flexbox */
+    flex-direction: row; /* Dispose les éléments en ligne */
+    align-items: center; /* Centre verticalement les éléments */
+    justify-content: space-between; /* Espace uniforme entre le logo, le nom et la barre */
+    width: 100%; /* Prend toute la largeur de l'écran */
+    height: 80px; /* Hauteur fixe */
+    padding: 10px 20px; /* Espacement interne */
+    background-color: white;
+    border: 3px solid rgb(3, 3, 59);
+    border-radius: 10px;
+    box-sizing: border-box; /* Inclut padding et bordures */
+    z-index: 1000; /* S'assure que l'entête est visible au-dessus du contenu */
+    position: fixed; /* Fixe l’entête en haut de la page */
+    overflow: hidden;
+    top: 0;
+    left: 0;   
+    }
+
+.items {
+    display: flex;
+    width: auto;
+    height: 430px; /* Hauteur fixe */
+    align-items: center;
+    justify-content: space-around;
+    padding: 1%;
+    gap: 10px;
+    background: radial-gradient(circle, rgb(3, 3, 59), rgb(50, 50, 90), rgb(120, 120, 150));
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6), 
+                    -5px -5px 10px rgba(50, 50, 100, 0.5);
+    border-radius: 10px;
+    overflow: hidden; /* Empêche tout contenu enfant de déborder */
+    position: relative; /* Positionne les éléments enfants correctement */
+    animation: reveal;
+    animation-timeline: view();
+    animation-range-start: cover 0%;
+    animation-range-end: contain 50%;
+    }
+
+.items2 {
+    display: flex;
+    width: auto;
+    height: 430px; /* Hauteur fixe */
+    align-items: center;
+    justify-content: space-around;
+    padding: 1%;
+    gap: 10px;
+    background: radial-gradient(circle, rgb(3, 3, 59), rgb(50, 50, 90), rgb(120, 120, 150));
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6), 
+                    -5px -5px 10px rgba(50, 50, 100, 0.5);
+    border-radius: 10px;
+    overflow: hidden; /* Empêche tout contenu enfant de déborder */
+    position: relative; /* Positionne les éléments enfants correctement */
+    animation: reveal;
+    animation-timeline: view();
+    animation-range-start: cover 0%;
+    animation-range-end: contain 50%;
+    }
+
+.aheration-texte {
+    display: flex;
+    width: auto;
+    height: 180px;
+    justify-content: space-around;
+    padding: 1%;
+    color:black;
+    background-color: rgba(0, 0, 0, 0); /* Fond transparent */
+    animation: reveal;
+    animation-timeline: view();
+    animation-range-start: cover 0%;
+    animation-range-end: contain 50%;     
+    }
+
+.sub-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%; /* Adapte à la largeur disponible dans .items */
+    height: 100%; /* Prend toute la hauteur de .items */
+    background-color: rgba(0, 0, 0, 0); /* Fond transparent */
+    padding: 1%;
+    overflow: hidden; /* Cache tout contenu débordant à l'intérieur de .sub-items */
+    position: relative;
+    border-radius: 10px; /* Ajoute des coins arrondis si souhaité */
+    font-size: 0.7rem; 
+    }
+
+.sub-items2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%; /* Adapte à la largeur disponible dans .items */
+    height: 100%; /* Prend toute la hauteur de .items */
+    background-color: rgba(0, 0, 0, 0); /* Fond transparent */
+    padding: 1%;
+    overflow: hidden; /* Cache tout contenu débordant à l'intérieur de .sub-items */
+    position: relative;
+    border-radius: 10px; /* Ajoute des coins arrondis si souhaité */
+    font-size: 0.7rem;
+    }
+
+.espace {
+    width: 125px;
+    height: 75px;
+    }
+
+#dimension-logo {
+    flex: 0 0 auto; /* Garde une taille fixe */
+    margin-right: 20px; /* Ajoute de l’espace à droite du logo */
+    }
+
+#dimension-logo img {
+    height: 80px; /* Ajuste la hauteur du logo */
+    width: auto; /* Conserve les proportions */
+}
+    
+#club-name {
+    font-size: 2em;
+    font-weight: bold;
+    color: transparent; /* Texte transparent pour le dégradé */
+    background: linear-gradient(45deg, rgb(3, 3, 59), rgb(59, 59, 150)); /* Dégradé en diagonale */
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4), /* Ombre principale */
+                 -1px -1px 2px rgba(255, 255, 255, 0.2); /* Effet lumineux discret */
+    }
+
+#dimension-photo {   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Assure que le conteneur prend toute la largeur */
+    height: 750px; 
+    overflow: hidden; /* Empêche l'image de dépasser */
+    }
+
+.dimension-image {
+    max-width: 100%; /* L'image ne dépasse jamais la largeur de son conteneur */
+    max-height: 100%; /* L'image reste toujours dans les limites verticales */
+    width: auto; /* Ajuste la largeur proportionnellement si nécessaire */
+    height: auto; /* Conserve toujours les proportions de l'image */
+    object-fit: contain; /* L'image est redimensionnée pour rester visible */
+    border-radius: 10px; /* Coins arrondis */
+    display: block; /* Évite les espaces blancs autour de l'image */
+    margin: auto; /* Centre l'image dans son conteneur */
+    }
+
+.dimension-image1 {
+    max-width: 100%; /* Empêche l'image de dépasser le conteneur */
+    height: auto; /* Conserve les proportions */
+    object-fit: cover; /* Ajuste l'image pour remplir le conteneur tout en rognant si nécessaire */
+    margin: 0; /* Retire les marges potentielles */
+    border-radius: 10px;
+    }
+
+.dimension-image2 {
+    max-width: 100%; /* Empêche l'image de dépasser le conteneur */
+    height: auto; /* Conserve les proportions */
+    object-fit: cover; /* Ajuste l'image pour remplir le conteneur tout en rognant si nécessaire */
+    margin: 0; /* Retire les marges potentielles */
+    border-radius: 10px;
+    }
+
+#liens {
+    display: flex; /* Active Flexbox pour l'alignement flexible */
+    flex-direction: row; /* Dispose les éléments en ligne */
+    flex-wrap: nowrap; /* Empêche les éléments de passer à la ligne */
+    justify-content: space-around; /* Espacement uniforme entre les éléments */
+    align-items: center; /* Centre les éléments verticalement */
+    width: 50%; /* Étend le conteneur à 40%*/
+    height: 100%;
+    padding: 0; /* Supprime les marges internes inutiles */
+    box-sizing: border-box; /* Inclut padding et bordures dans le calcul de la largeur */ 
+    }
+
+#SLC {
+    display: flex;
+    width:800px; 
+    flex-direction: row;
+    align-items:center; 
+    justify-content: center;
+    font-weight: bold;
+    color: rgb(3, 3, 59);
+    text-shadow: 2px 2px 4px rgba(3, 3, 59, 0.6);
+    font-size: 1.0em;
+    }
+
+.text-format {
+    height: auto;
+    font-weight: bold;
+    color: rgb(3, 3, 59); /* Couleur de base */
+    text-align: center;
+    padding: 2px 5px; /* Espacement autour de chaque lien */
+    min-width: 90px; /* Largeur minimale pour empêcher le chevauchement */
+    max-width: 120px; /* Largeur maximale pour un bon alignement */
+    flex: 1; /* Chaque élément prend une part égale de l'espace */
+    white-space: nowrap; /* Empêche le retour à la ligne */
+    transition: transform 0.3s ease, color 0.3s ease; /* Animation pour le survol */
+    cursor: pointer; /* Ajoute un curseur interactif au survol */
+    font-size: 1rem;
+    }
+
+.text-format:hover {
+    cursor: pointer;
+    color:rgba(3, 3, 59, 0.614);
+    transform: scale(1.3);
+    }
+
+.centrer-texte-color {
+    display: flex;
+    height:auto;
+    font-size: clamp(32px, 6vw, 4em); /* Taille minimale 16px, optimale 3vw, maximale 2em */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Centre le texte horizontalement */
+    color: white;
+    text-shadow: 2px 2px 4px rgba(3, 3, 59, 0);
+    overflow: hidden; /* Évite tout débordement */
+    }
+
+.text-color-format {
+    height: auto;
+    color: white;
+    font-size: clamp(16px, 3vw, 1.5em); /* Taille minimale 16px, optimale 3vw, maximale 1,5em */
+    white-space: pre-wrap; /* Respecte les sauts de ligne */
+    text-align: justify; /* Justifie le texte */
+    word-break: break-word; /* Coupe les mots longs */
+    overflow-wrap: break-word; /* Gère les débordements */
+    padding: 15px;
+    }
+
+
+.block-fin {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 230px;
+    height: 230px;
+    border-radius: 10px;
+    background-color: rgba(3,3,59);
+    color:white;
+    font-size: 1.2em;
+    font-weight: bold;
+    position:relative;
+    z-index:1;
+    transition: color 0.9s ease-in-out;   
+    }
+
+.fenetre {
+    opacity: 0; /* Initialement transparent */
+    visibility: hidden; /* Invisible au départ */
+    position: absolute;
+    display: flex; /* Utilisation de flexbox */
+    align-items: center; /* Centre verticalement */
+    justify-content: center; /* Centre horizontalement */
+    flex-direction: column; /* Organise les enfants verticalement */
+    top: 0;
+    left: 0;
+    width: 230px;
+    height: 230px;
+    border-radius: 10px;
+    text-align: center; /* Centre le texte horizontalement */
+    font-size: 0.7em;
+    white-space: pre-wrap; /* Respect des espaces et des retours à la ligne */
+    background-color: rgba(3, 3, 59, 0.725);
+    color: white;
+    padding: 10px;
+    border: 1px solid black;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
+    z-index: 2;
+    box-sizing: border-box;
+    transition: opacity 1s ease-in-out, visibility 0s linear 1s; /* Transition douce avec délai */
+    }
+
+.pointeur {
+    cursor: pointer;
+    }
+
+.color {
+    color: white;
+    text-decoration: none;
+    }
+
+.block-fin:hover {
+    color: transparent; 
+    }
+
+.block-fin:hover .fenetre {
+    opacity: 1; /* Rendre visible */
+    visibility: visible; /* Activer la visibilité */
+    }
+    
+.fenetre div {
+    opacity: 0; /* Contenu initialement masqué */
+    transform: translateY(10px); /* Légèrement décalé verticalement */
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Apparition progressive */
+    }
+    
+.block-fin:hover .fenetre div {
+    opacity: 1; /* Contenu devient visible */
+    transform: translateY(0); /* Contenu retrouve sa position normale */
+    }
+
+.bas-de-page {
+    display: flex;
+    flex-direction: column;
+    width: 100vw; /* Utilise toute la largeur de l'écran */
+    max-width: 100%; /* S'assure qu'il ne dépasse pas */
+    min-height: 400px; /* Hauteur minimale */
+    height: auto; /* Ajuste la hauteur en fonction du contenu */
+    align-items: stretch; /* Les enfants s'adaptent à la largeur */
+    justify-content: space-around; /* Espacement uniforme */
+    padding: 1%; /* Espacement interne */
+    border-radius: 10px;
+    border: 3px solid rgb(3, 3, 59); /* Bordure visible comme l'entête */
+    background-color: white;
+    box-sizing: border-box; /* Inclut padding et bordures */
+    margin: 0; /* Évite les marges externes */
+    animation: reveal;
+    animation-timeline: view();
+    animation-range-start: cover 0%;
+    animation-range-end: contain 50%;
+    }
+
+
+
+.photo-bas-de-page {
+    display:flex;
+    width:auto;
+    flex-direction: row;
+    width: auto;
+    height:125px;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border: 3px solid  white;
+    }
+
+.contenu-bas-de-page 
+    {
+    display: flex;
+    flex-direction: row; /* Organisation en ligne par défaut */
+    flex-wrap: nowrap; /* Permet aux enfants de passer à une nouvelle ligne si nécessaire */
+    width: 100%; /* Occupation totale de la largeur disponible */
+    justify-content: space-between; /* Espacement uniforme entre les boxes */
+    align-items: flex-start; /* Alignement en haut par défaut */
+    background-color: rgb(3, 3, 59); /* Fond bleu foncé */
+    color: white; /* Texte en blanc */
+    padding: 10px;
+    border-radius: 10px; /* Arrondit les coins */
+    box-sizing: border-box; /* Inclut les bordures et paddings */
+    }
+
+.box-bas-de-page {
+    flex: 1 1 calc(30% - 20px); /* 30% moins l’espace de marge */
+    min-width: 0; /* Largeur minimale (utile pour petits écrans) */
+    max-width: 100%; /* Ne dépasse jamais la largeur disponible */
+    margin: 10px;
+    padding: 15px;
+    background-color: rgb(3, 3, 59); /* Fond bleu foncé */
+    color: white; /* Texte blanc */
+    font-size: 10px;
+    text-align: justify; /* Texte justifié */
+    border-radius: 10px; /* Coins arrondis */
+    overflow-wrap: break-word; /* Coupe les mots trop longs */
+    overflow: hidden;
+    box-sizing: border-box; /* Prend padding et bordures en compte */
+    white-space: pre-wrap; /* Respect des espaces et retours à la ligne */
+    }
+
+.carousel-container {
+    display: flex;
+    overflow: hidden; /* Cache tout débordement */
+    width: 100%;
+    max-width: 570px; /* Largeur de la vidéo + gap entre les vidéos */
+    height: auto;
+    aspect-ratio: 16 / 9; /* Maintient le ratio largeur/hauteur des vidéos */
+    margin: auto; /* Centre horizontalement */
+    position: relative;
+    background: transparent;
+    }
+
+.carousel {
+    display: flex;
+    transition: transform 0.7s ease-in-out; /* Transition fluide */
+    gap: 10px;
+    width: 100%;
+    height: auto;   
+    }
+
+iframe {
+    width: 100%; /* Largeur fixée pour chaque vidéo */
+    height: calc(100% - 10px); /* Hauteur fixée pour chaque vidéo */
+    flex-shrink: 0; /* Empêche la réduction de la taille des vidéos */
+    border: none;
+    border-radius: 10px; /* Coins arrondis */
+    object-fit: cover; /* S'assure que le contenu de la vidéo s'adapte au conteneur */   
+    }
+
+button {
+    background-color: rgb(3, 3, 59);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10; /* Rend les boutons visibles au-dessus de la vidéo */
+    transition: background-color 0.3s ease;
+    }
+
+button:hover {
+    background-color: white;
+    color: black;
+    }
+
+.prev-btn {
+    position: relative; /* Bouton reste dans le flux de `.items` */
+    order: -1; /* Place le bouton avant le carrousel */
+    }
+
+.next-btn {
+    position: relative; /* Bouton reste dans le flux de `.items` */
+    order: 1; /* Place le bouton après le carrousel */
+    }
+
+
+/*----------------------------------------------------  mise en page media queries ---------------------------------------------------------*/
+
+  
+                                       /*Pour les tablettes  */
+
+
+@media (min-width: 600px) and (max-width: 1250px) {
+    .entete {
+        flex-direction: column; /* Passage en colonne pour s'adapter à la largeur */
+        height: auto; /* Ajuste automatiquement la hauteur selon le contenu */
+        }
+    
+    .items {
+        flex-direction: column; /* Change la disposition en mode colonne */
+        align-items: center; /* Centre les contenus horizontalement */
+        justify-content: center; /* Centre les contenus verticalement */
+        height: auto; /* Ajuste la hauteur au contenu */
+        gap: 20px; /* Ajoute un espacement entre les éléments */
+        padding: 5%;
+        }
+
+    .items2 {
+        align-items: center; /* Centre les contenus horizontalement */
+        height: auto; /* Ajuste la hauteur au contenu */
+        gap: 20px; /* Ajoute un espacement entre les éléments */
+        padding: 3%;
+        }
+
+    .sub-items {
+        width: 50%; /* Réduit la largeur pour s’assurer qu’elle reste dans .items */
+        max-width: 100%; /* Empêche tout débordement horizontal */
+        height: auto; /* Ajuste dynamiquement la hauteur au contenu */
+        overflow: hidden; /* Cache tout débordement éventuel */
+        margin-bottom: 10px; /* Ajoute de l’espacement entre les blocs */
+        margin-left: auto;
+        margin-right: 0%;
+        display: flex;
+        justify-content: center; /* Centre les éléments horizontalement */
+        align-items: center; /* Centre verticalement */   
+        }
+
+    .sub-items2 {
+        width: 50%; /* Réduit la largeur pour s’assurer qu’elle reste dans .items */
+        max-width: 100%; /* Empêche tout débordement horizontal */
+        height: auto; /* Ajuste dynamiquement la hauteur au contenu */
+        overflow: hidden; /* Cache tout débordement éventuel */
+        margin-bottom: 10px; /* Ajoute de l’espacement entre les blocs */
+        margin-left: 0%;
+        margin-right: auto;
+        display: flex;
+        justify-content: center; /* Centre les éléments horizontalement */
+        align-items: center; /* Centre verticalement */  
+        }
+
+    .dimension-image {
+        max-width: 100%; /* Empêche l’image de dépasser la largeur du conteneur */
+        height: auto; /* Conserve les proportions de l’image */
+        object-fit: contain; /* Garantit que l’image reste entièrement visible */
+        display: block; /* Supprime les espaces blancs autour de l’image */
+        margin: auto; /* Centre l’image */
+        }    
+
+    #club-name {
+        font-size: 1.1em; /* Taille légèrement réduite */
+        margin-bottom: 30px;
+        }
+    
+    #liens {
+        display: flex !important; /* Active Flexbox */
+        flex-direction: row !important; /* Dispose en ligne horizontale */
+        justify-content: space-evenly; /* Espacement uniforme entre les éléments */
+        align-items: center !important; /* Centre verticalement */
+        flex-wrap: nowrap; /* Empêche les retours à la ligne */
+        width: 100%; /* Prend toute la largeur */
+        height: 40px;
+        font-size: 1.3rem;
+        overflow-x: auto; /* Permet un défilement horizontal si nécessaire */
+        }
+    
+    .text-format {
+        flex: 0 1 auto; /* Empêche les éléments de se comprimer */
+        font-size: 0.9em; /* Taille adaptée pour tablette */
+        text-align: center; /* Centre le texte */
+        white-space: nowrap; /* Empêche les mots de revenir à la ligne */
+        }
+
+
+    
+    
+    #dimension-logo {
+        width: 80px; 
+        height: 80px;
+        }
+
+    .espace {
+        width: 125px;
+        height: 75px;
+        }
+
+    #dimension-photo {
+        height: 70vh; /* Réduit la hauteur pour tablettes */
+        width: 100%;
+        }
+
+    .dimension-image1 {
+        width: 100%; /* Réduit la taille de l'image sur tablette */
+        }
+
+    .dimension-image2 {
+        width: 90%; /* Réduit la taille de l'image sur tablette */
+        }
+
+    .bas-de-page {
+        width: 100vw; /* Toujours utiliser 100% de la largeur */
+        padding: 10px; /* Ajuste les espaces internes */
+        }
+
+    }
+
+
+
+
+
+
+                               /* Pour les téléphones portables  */
+
+@media (max-width: 600px) {
+    .entete {
+        flex-direction: column; /* Passage en colonne pour s'adapter à la largeur */
+        height: auto; /* Ajuste automatiquement la hauteur selon le contenu */
+        padding: 10px; /* Réduit le padding pour les petits écrans */
+        font-size: 15px; /* Réduction de la taille de la police */
+        border-radius: 5px; /* Réduit légèrement les coins arrondis */
+        max-width: 768px;
+        align-items: center;
+        }
+
+    .dimension-image1 {
+        
+        height: auto; /* Garde les proportions */
+        aspect-ratio: auto; /* Utilise le ratio automatique */
+        object-fit: contain; /* Permet de voir l'intégralité de l'image */
+        align-self: flex-end;
+        box-sizing: border-box; /* Inclut le padding dans les dimensions totales */
+        }
+    
+
+            
+    .items {
+        flex-direction: column; /* Change la disposition en mode colonne */
+        align-items: center; /* Centre les contenus horizontalement */
+        justify-content: center; /* Centre les contenus verticalement */
+        height: auto; /* Ajuste la hauteur au contenu */
+        gap: 20px; /* Ajoute un espacement entre les éléments */
+        padding: 1%;
+        }
+
+    .items2 {
+        align-items: center; /* Centre les contenus horizontalement */
+        height: auto; /* Ajuste la hauteur au contenu */
+        gap: 20px; /* Ajoute un espacement entre les éléments */
+        padding: 2%;
+        }
+
+    .sub-items {
+        width: 90%; /* Réduit la largeur pour s’assurer qu’elle reste dans .items */
+        max-width: 100%; /* Empêche tout débordement horizontal */
+        height: auto; /* Ajuste dynamiquement la hauteur au contenu */
+        overflow: hidden; /* Cache tout débordement éventuel */
+        margin-bottom: 10px; /* Ajoute de l’espacement entre les blocs */
+        display: flex;
+        justify-content: center; /* Centre les éléments horizontalement */
+        align-items: center; /* Centre verticalement */
+        }
+
+    
+    .sub-items2 {
+        width: 90%; /* Réduit la largeur pour s’assurer qu’elle reste dans .items */
+        max-width: 100%; /* Empêche tout débordement horizontal */
+        height: auto; /* Ajuste dynamiquement la hauteur au contenu */
+        overflow: hidden; /* Cache tout débordement éventuel */
+        margin-bottom: 10px; /* Ajoute de l’espacement entre les blocs */
+        display: flex;
+        justify-content: center; /* Centre les éléments horizontalement */
+        align-items: center; /* Centre verticalement */
+        }
+
+
+
+    .dimension-image {
+        max-width: 100%; /* Empêche l’image de dépasser la largeur du conteneur */
+        height: auto; /* Conserve les proportions de l’image */
+        object-fit: contain; /* Garantit que l’image reste entièrement visible */
+        display: block; /* Supprime les espaces blancs autour de l’image */
+        margin: auto; /* Centre l’image */
+        }    
+
+    .aheration-texte{
+        height: 0px;
+        }
+
+    #liens{ 
+        flex-direction: column; /* Empile les éléments verticalement */
+        align-items: center;
+        }
+
+    #club-name {
+        font-size: 1.3em; /* Taille adaptée aux petits écrans */
+        line-height: 1.2; /* Compacte le texte verticalement */
+        margin-top: 10px;
+        margin-bottom: 10px;
+        }
+
+    .text-color-format {
+        color: white;
+        font-size: clamp(12px, 2vw, 0.7em); /* Taille minimale 16px, optimale 3vw, maximale 0,5em */
+        white-space: pre-wrap; /* Respecte les sauts de ligne */
+        text-align: justify; /* Justifie le texte */
+        word-break: break-word; /* Coupe les mots longs */
+        overflow-wrap: break-word; /* Gère les débordements */
+        padding: 15px;
+        }
+        
+    .text-format {
+        font-size: 0.8em; /* Réduit la taille de la police pour un affichage plus discret */
+        padding: 5px; /* Ajuste l'espacement intérieur pour éviter que les éléments paraissent trop serrés */
+        text-align: center; /* Garde les mots centrés */
+        white-space: nowrap; /* Empêche le retour à la ligne */   
+        }
+
+    #dimension-logo {
+        margin-bottom: 10px;
+        width: 60px; /* Réduction pour les téléphones portables */
+        height: auto;
+        }
+
+    .espace {
+        width: 125px;
+        height: 75px;
+        }
+
+    #dimension-photo {
+        height: 68vh; /* Réduction supplémentaire pour téléphones */
+        }
+
+    .dimension-image2 {
+        width: 100%; /* Utilise toute la largeur disponible */
+        }
+    
+
+        
+    .contenu-bas-de-page { 
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        box-sizing: border-box;
+        
+        }
+
+    .box-bas-de-page {
+        padding: 1px; /* Espacement interne pour le texte */
+        font-size: calc(0.3rem + 0.3vw); /* Texte réactif basé sur la largeur de la boîte */    
+        }
+
+    .bas-de-page {
+        padding: 3%;
+        }
+
+    .block-fin {
+        font-size: 0.7rem;
+        width: 100px;
+        height: 100px;
+        }
+
+    .fenetre {
+        font-size: clamp(0.5em, 1vw, 0.8em); /* Taille dynamique du texte */
+        text-align: center; /* Centre le texte horizontalement */
+        justify-content: center; /* Centre le contenu horizontalement */
+        display: flex; /* Active le modèle flexbox */
+        align-items: center; /* Centre le contenu verticalement */
+        width: 100px;
+        height: 100px;
+        overflow: hidden; /* Coupe le texte s'il déborde */
+        word-wrap: break-word; /* Gère les mots trop longs */
+        white-space: pre-wrap; /* Respect des espaces et retour à la ligne */
+        box-sizing: border-box; /* Inclut padding et bordure dans la taille totale */
+        }
+
+    .carousel-container {
+        max-width: 90%; /* Limite la largeur à 90% de l'écran */
+        height: auto;
+        overflow: hidden;
+        }
+
+    iframe {
+        width: 100%; /* S'adapte à toute la largeur */
+        aspect-ratio: 16 / 9; /* Conserve le ratio 16:9 */
+        height: auto; /* Ajuste la hauteur automatiquement */
+        border-radius: 5px; /* Ajoute des coins arrondis */
+        object-fit: contain; /* Assure que tout le contenu est visible */
+        }
+
+    button {
+        padding: 6px 10px; /* Boutons plus petits */
+        font-size: 12px; /* Police adaptée */
+        }
+}
+
+    
+
+
+/*----------------------------------------------------------Animation-----------------------------------------------------------------------*/
+
+
+@keyframes showFenetre {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+        }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+        }
+    }
+
+@keyframes reveal {
+    from {  
+        transform: scale(0);
+        opacity: 0;
+        }
+
+    to {   
+        transform: scale(1);
+        opacity: 1;
+        }
+    }
+
