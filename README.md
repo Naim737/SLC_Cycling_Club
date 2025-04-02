@@ -8,4 +8,4 @@ Lorsque je visualise le rendu sur un téléphone Apple et un téléphone Samsung
 
 ---------------------------------------------rendu telephone portable:---------------------------------------------
 
-la consigne a été respecté, cependant je trouve que l entete fixe prend trop de place sur un ecran de telephone. je n ai pas eu le temps de modifier la taille pour avoir un rendu cohérent.
+la consigne a été respectée, cependant je trouve que l entete fixe prend trop de place sur un ecran de telephone. je n ai pas eu le temps de modifier la taille pour avoir un rendu cohérent.
