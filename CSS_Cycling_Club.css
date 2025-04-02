@@ -575,7 +575,7 @@ button:hover {
         font-size: 15px; /* Réduction de la taille de la police */
         border-radius: 5px; /* Réduit légèrement les coins arrondis */
         max-width: 768px;
-        align-items: center;
+        
         }
 
     .dimension-image1 {
